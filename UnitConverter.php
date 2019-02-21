@@ -66,22 +66,46 @@ class UnitConverter extends Component {
     private $units = [];
 
     /**
+     * Converts and return the value
+     * 
+     * @param integer|float $value
+     * @param string $from_unit
+     * @param string $to_unit
+     * @param array $config
+     */
+    public function convert($value = NULL, $from_unit = NULL, $to_unit = NULL, $config = []) {
+        
+        $unitFile = key_exists('unitFile', $config) ? $config['unitFile'] : NULL;
+        $decimals = key_exists('decimals', $config) ? $config['decimals'] : 2;
+        $round = key_exists('round', $config) ? $config['round'] : FALSE;
+                
+        //create units array
+        $this->defineUnits($unitFile);
+        //unit optional
+        if (!is_null($value) && !is_null($from_unit)) {
+            //set from unit
+            $this->from($value, $from_unit);
+            $this->to($to_unit,$decimals,$round);
+        }
+    }
+
+    /**
      * Unit Converter Constructor
      * @param integer|float $value
      * @param string $unit
      * @param string $unitFile
      * @param array $config
      */
-    public function __construct($value = NULL, $unit = NULL, $unitFile = NULL, $config = []) {
-        //create units array
-        $this->defineUnits($unitFile);
-        //unit optional
-        if (!is_null($value) && !is_null($unit)) {
-            //set from unit
-            $this->from($value, $unit);
-        }
-        parent::__construct($config);
-    }
+    /* public function __construct($value = NULL, $unit = NULL, $unitFile = NULL, $config = []) {
+      //create units array
+      $this->defineUnits($unitFile);
+      //unit optional
+      if (!is_null($value) && !is_null($unit)) {
+      //set from unit
+      $this->from($value, $unit);
+      }
+      parent::__construct($config);
+      } */
 
     /**
      * Allow switching between different unit definition files. Defaults to Units.php
