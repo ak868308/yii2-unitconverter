@@ -1,0 +1,21 @@
+{
+    "name": "ak868308/yii2-unitconverter",
+    "description": "This converter allows you to convert any unit to any other compatible unit type",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"," unit converter"," php unit converter"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Khalid",
+            "email": "ak868308@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ak868308\\unitconverter\\": ""
+        }
+    }
+}
