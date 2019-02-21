@@ -44,20 +44,17 @@ Once the extension is installed, initialize your component, add the following li
 Finally you are very close to use, simply use it in your code by  :
 
 ```
-php
 <?= Yii::$app->unitconverter->convert(10,"m","ft",['decimals' => 2, 'round' => TRUE]); ?>
 ```
 Using another file somewhere in the project:
 
 ```
-php
 <?= Yii::$app->unitconverter->convert(10,"m","ft",['unitFile' => '/path/to/my/own/Units.php', 'decimals' => 2, 'round' => TRUE]); ?>
 ```
 
 Using the name of the file in config:
 
 ```
-php
 <?= Yii::$app->unitconverter->convert(10,"m","ft",['unitFile' => 'BaseUnits.php', 'decimals' => 2, 'round' => TRUE]); ?>```
 ```
 
