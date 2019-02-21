@@ -85,7 +85,7 @@ class UnitConverter extends Component {
         if (!is_null($value) && !is_null($from_unit)) {
             //set from unit
             $this->from($value, $from_unit);
-            $this->to($to_unit,$decimals,$round);
+            return $this->to($to_unit,$decimals,$round);
         }
     }
 
