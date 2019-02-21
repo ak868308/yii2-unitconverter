@@ -49,11 +49,17 @@ php
 ```
 Using another file somewhere in the project:
 
-```php<?= Yii::$app->unitconverter->convert(10,"m","ft",['unitFile' => '/path/to/my/own/Units.php', 'decimals' => 2, 'round' => TRUE]); ?>```
+```
+php
+<?= Yii::$app->unitconverter->convert(10,"m","ft",['unitFile' => '/path/to/my/own/Units.php', 'decimals' => 2, 'round' => TRUE]); ?>
+```
 
 Using the name of the file in config:
 
-```php<?= Yii::$app->unitconverter->convert(10,"m","ft",['unitFile' => 'BaseUnits.php', 'decimals' => 2, 'round' => TRUE]); ?>```
+```
+php
+<?= Yii::$app->unitconverter->convert(10,"m","ft",['unitFile' => 'BaseUnits.php', 'decimals' => 2, 'round' => TRUE]); ?>```
+```
 
 Define own units inline:
 ```php
